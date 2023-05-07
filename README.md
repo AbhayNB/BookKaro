@@ -2,9 +2,9 @@
 A Online Ticket Booking App
 To run the app run the main.py file
 # MAD1 Project 
-# *Author
-# Abhay Bairagi 
-22f1000829@ds.study.iitm.ac.in*
+# Author
+*Abhay Bairagi 
+22f1000829@ds.study.iitm.ac.in 
 
 # Description:
 The ticket booking app allows users to view venues and shows and book shows with seats also allows users to search for 
