@@ -1,0 +1,127 @@
+# API endpoints for managing venues
+# Base URL: http://localhost:5000
+
+swagger: "2.0"
+info:
+  description: "API endpoints for managing venues."
+  version: "1.0.0"
+  title: "Venue API"
+host: "localhost:5000"
+basePath: "/"
+schemes:
+  - "http"
+
+paths:
+  /veapi:
+    post:
+      summary: "Create a new venue."
+      description: "Creates a new venue with the given parameters."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "name"
+          in: "formData"
+          description: "Name of the venue."
+          required: true
+          type: "string"
+        - name: "location"
+          in: "formData"
+          description: "Location of the venue."
+          required: true
+          type: "string"
+        - name: "place"
+          in: "formData"
+          description: "Place of the venue."
+          required: true
+          type: "string"
+        - name: "capacity"
+          in: "formData"
+          description: "Capacity of the venue."
+          required: true
+          type: "integer"
+      responses:
+        201:
+          description: "Venue created."
+          schema:
+            $ref: "#/definitions/Venue"
+        400:
+          description: "Bad request."
+
+    get:
+      summary: "Get all venues."
+      description: "Returns a list of all venues."
+      produces:
+        - "application/json"
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Venue"
+        404:
+          description: "Venues not found."
+
+  /veapi/{venue_id}:
+    get:
+      summary: "Get a venue by ID."
+      description: "Returns a venue with the given ID."
+      produces:
+        - "application/json"
+      parameters:
+        - name: "venue_id"
+          in: "path"
+          description: "ID of the venue."
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "Successful operation."
+          schema:
+            $ref: "#/definitions/Venue"
+        404:
+          description: "Venue not found."
+
+    put:
+      summary: "Update a venue by ID."
+      description: "Updates a venue with the given ID."
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "venue_id"
+          in: "path"
+          description: "ID of the venue."
+          required: true
+          type: "integer"
+        - name: "name"
+          in: "formData"
+          description: "Name of the venue."
+          required: true
+          type: "string"
+        - name: "location"
+          in: "formData"
+          description: "Location of the venue."
+          required: true
+          type: "string"
+        - name: "place"
+          in: "formData"
+          description: "Place of the venue."
+          required: true
+          type: "string"
+        - name: "capacity"
+          in: "formData"
+          description: "Capacity of the venue."
+          required: true
+          type: "integer"
+      responses:
+        200:
+          description: "Venue updated."
+          schema:
+            $ref: "#/definitions/Venue"
+        404:
+          description: "Venue not found."
+        400:
