@@ -3,7 +3,7 @@ A Online Ticket Booking App
 To run the app run the main.py file
 # MAD1 Project 
 # Author
-*Abhay Bairagi 
+Abhay Bairagi 
 22f1000829@ds.study.iitm.ac.in 
 
 # Description:
